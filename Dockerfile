@@ -1,10 +1,10 @@
 FROM golang:1.9 as build
-MAINTAINER Benjamin Chastanier <benjamin.chastanier@gmail.com>
+MAINTAINER Will Norris <will@willnorris.com>
 
-WORKDIR /go/src/github.com/benjaminch/imageproxy
+WORKDIR /go/src/willnorris.com/go/imageproxy
 ADD . .
 
-WORKDIR /go/src/github.com/benjaminch/imageproxy/cmd/imageproxy
+WORKDIR /go/src/willnorris.com/go/imageproxy/cmd/imageproxy
 RUN go-wrapper download
 RUN CGO_ENABLED=0 GOOS=linux go-wrapper install
 
